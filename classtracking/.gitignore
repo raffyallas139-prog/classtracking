@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 HEAD
->>>>>>> origin/main
 *.log
 .DS_Store
 .env
@@ -26,8 +23,6 @@ HEAD
 Homestead.json
 Homestead.yaml
 Thumbs.db
-<<<<<<< HEAD
-=======
 =======
 /vendor/
 node_modules/
@@ -60,4 +55,3 @@ Homestead.json
 .phpactor.json
 auth.json
 4a4f7dcde80798b93d578aba562ab81628444636
->>>>>>> origin/main
