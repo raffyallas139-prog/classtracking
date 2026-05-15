@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,16 +11,61 @@ use Laravel\Sanctum\HasApiTokens; // Enables bearer token validation for mobile 
 class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
 
+=======
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<UserFactory> */
+    use HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+>>>>>>> origin/main
     protected $fillable = [
         'name',
         'email',
         'password',
+<<<<<<< HEAD
         'role',
         'is_verified',
     ];
 
+=======
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+>>>>>>> origin/main
     protected $hidden = [
         'password',
         'remember_token',
     ];
+<<<<<<< HEAD
 }
+=======
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+}
+>>>>>>> origin/main
