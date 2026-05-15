@@ -16,5 +16,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// Mobile Specific Routes
+Route::prefix('mobile')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('mobile.dashboard');
+    });
+    
+    Route::get('/search', function () {
+        return view('mobile.search');
+    });
+});
 
 require __DIR__.'/auth.php';
